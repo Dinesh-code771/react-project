@@ -1,14 +1,14 @@
 .container {
   position: relative;
-  height: 50vh;
+  height: auto;
 }
 #recipe {
   position: absolute;
-  top: 30%;
+  top: 25%;
 }
 #recipe-header {
   background-color: blanchedalmond;
-  width: 200vh;
+  width: 213vh;
   height: 50px;
   text-align: center;
   font-size: 30px;
@@ -56,12 +56,18 @@ form {
   display: flex;
 }
 #ingrediants {
+  background-color: rgb(156, 156, 156);
+  display: flex;
   width: 400px;
   height: 300px;
   overflow-y: scroll;
 }
-#process{
+#process {
   width: 700px;
   height: 100px;
   overflow-y: scroll;
+}
+#rec {
+  text-align: center;
+  font-size: 20px;
 }
