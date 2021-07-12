@@ -26,11 +26,14 @@ class Recipe extends Component {
             <p>{"Area of Meal  - "+this.state.datafromparent[0].strArea}</p>
             <label>Ingrediants</label>
             <div id="ingrediants">
-             {this.state.dataarray.map((ele)=>{
+              <div> {this.state.dataarray.map((ele)=>{
+               return <p>{this.state.datafromparent[0][ele]+"   ------"}</p>
+             })}</div>
+             <div>{this.state.datameasure.map((ele)=>{
                return <p>{this.state.datafromparent[0][ele]}</p>
-             })}
+             })}</div>
             </div>
-            <p >Recpie</p>
+            <p id="rec" >Recpie</p>
             <div id="process"><p>{this.state.datafromparent[0].strInstructions}</p>
             </div>
             
