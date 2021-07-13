@@ -5,14 +5,24 @@
 #recipe {
   position: absolute;
   top: 25%;
+  background-color: rgb(235, 214, 232);
+  height: 100vh;
+  width: 200vh;
+  margin-left: 40px;
 }
 #recipe-header {
+  display: flex;
+  justify-content: space-between;
   background-color: blanchedalmond;
-  width: 213vh;
+  width: 200vh;
   height: 50px;
+
   text-align: center;
   font-size: 30px;
   padding: 5px, 5px;
+}
+#recipe-header p {
+  margin-left: 514px;
 }
 #img {
   margin-top: 15px;
@@ -56,9 +66,9 @@ form {
   display: flex;
 }
 #ingrediants {
-  background-color: rgb(156, 156, 156);
+  background-color: rgb(216, 216, 216);
   display: flex;
-  width: 400px;
+  width: 700px;
   height: 300px;
   overflow-y: scroll;
 }
@@ -66,6 +76,7 @@ form {
   width: 700px;
   height: 100px;
   overflow-y: scroll;
+  background-color: lightgray;
 }
 #rec {
   text-align: center;
