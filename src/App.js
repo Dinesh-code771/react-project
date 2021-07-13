@@ -11,7 +11,7 @@ class App extends Component {
     on:false,
  
     handel:()=>{
-      
+      console.log("error")
     }
   }
     
@@ -23,17 +23,12 @@ class App extends Component {
       const apiinfo = await data.json();
       this.setState({info:apiinfo})
       if(this.state.info.meals!==null){
-        this.setState();
         console.log(this.state.on)
-        this.setState({on:!this.state.on});
-  
+        this.setState({on:!this.state.on})
       }
 
       else if(this.state.info.meals===null){
         this.setState({on:false,detais:"Data Not Found"})
-        
-       
-        
  
       }
    
@@ -52,10 +47,11 @@ class App extends Component {
    <button  onClick={()=>this.callApi()} id="but">
      Get Ingrediants
    </button>
-  <h3>Type a Dish Name to Search For its Ingrediant</h3>
+  {this.state.on?<h3>Type a Dish Name to Search For its Ingrediant</h3>:null}
    </div>
    <div id="display">
-  {this.state.on ?<Recipe  datafromapi={this.state.info}/>:<h4 style={{"textAlign":"center"}}>{this.state.detais}</h4>} 
+  {(this.state.on && this.state.info.meals!==null) ?<Recipe  datafromapi={this.state.info}/>:<h4 style={{"textAlign":"center"}}>{this.state.detais}</h4>} 
+  
  </div> 
       </React.Fragment>
    );
