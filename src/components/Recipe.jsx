@@ -15,8 +15,10 @@ class Recipe extends Component {
       }
       
         return ( <div id="recipe">
+         
           <div id="recipe-header">
           {this.state.datafromparent[0].strMeal}
+        
           </div>
           <div id="mealsdetails">
           <img id="img" src={this.state.datafromparent[0].strMealThumb} alt="" />
@@ -26,11 +28,11 @@ class Recipe extends Component {
             <p>{"Area of Meal  - "+this.state.datafromparent[0].strArea}</p>
             <label>Ingrediants</label>
             <div id="ingrediants">
-              <div> {this.state.dataarray.map((ele)=>{
-               return <p>{this.state.datafromparent[0][ele]+"   ------"}</p>
+              <div> {this.state.dataarray.map((ele,index)=>{
+               return <p key={index}>{this.state.datafromparent[0][ele]+"   ------"}</p>
              })}</div>
-             <div>{this.state.datameasure.map((ele)=>{
-               return <p>{this.state.datafromparent[0][ele]}</p>
+             <div>{this.state.datameasure.map((ele,index)=>{
+               return <p key={index}>{this.state.datafromparent[0][ele]}</p>
              })}</div>
             </div>
             <p id="rec" >Recpie</p>
