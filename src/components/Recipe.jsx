@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import "../header.css"
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/Favorite'
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+
 class Recipe extends Component {
     state = {
       datafromparent : this.props.datafromapi.meals,
@@ -17,8 +23,13 @@ class Recipe extends Component {
         return ( <div id="recipe">
          
           <div id="recipe-header">
-          {this.state.datafromparent[0].strMeal}
-        
+          {<p>{this.state.datafromparent[0].strMeal}</p>}
+          <FormControlLabel 
+        control={<Checkbox icon={<FavoriteBorderOutlinedIcon fontSize="large" marginleft="30px" />} 
+                  checkedIcon={<FavoriteBorder fontSize="large" />}
+          name="checkedH" />}
+      
+      />
           </div>
           <div id="mealsdetails">
           <img id="img" src={this.state.datafromparent[0].strMealThumb} alt="" />
