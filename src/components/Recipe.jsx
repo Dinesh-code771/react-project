@@ -23,7 +23,7 @@ class Recipe extends Component {
         return ( <div id="recipe">
          
           <div id="recipe-header">
-          {<p>{this.state.datafromparent[0].strMeal}</p>}
+          {<p>{<a style={{color:"black"}}href={this.state.datafromparent[0].strSource}>{this.state.datafromparent[0].strMeal}</a>}</p>}
           <FormControlLabel 
         control={<Checkbox icon={<FavoriteBorderOutlinedIcon fontSize="large" marginleft="30px" />} 
                   checkedIcon={<FavoriteBorder fontSize="large" />}
