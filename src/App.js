@@ -7,8 +7,12 @@ class App extends Component {
   state = {
     value:"",
     info:"",
+    detais:"",
     on:false,
-    postion:false,
+ 
+    handel:()=>{
+      
+    }
   }
     
    callApi = async(e)=>{
@@ -18,12 +22,25 @@ class App extends Component {
       let data =  await fetch(URL);
       const apiinfo = await data.json();
       this.setState({info:apiinfo})
-      this.setState({on:!this.state.on,postion:!this.state.postion});
+      if(this.state.info.meals!==null){
+        this.setState();
+        console.log(this.state.on)
+        this.setState({on:!this.state.on});
+  
+      }
 
+      else if(this.state.info.meals===null){
+        this.setState({on:false,detais:"Data Not Found"})
+        
+       
+        
+ 
+      }
+   
     }
-  catch{
-   this.state.handel()
-  }   
+    catch {
+      this.state.handel()
+    };
 
   }
   render() { 
@@ -37,8 +54,8 @@ class App extends Component {
    </button>
   <h3>Type a Dish Name to Search For its Ingrediant</h3>
    </div>
-   <div>
-  {this.state.on && this.state.postion?<Recipe datafromapi={this.state.info}/>:null} 
+   <div id="display">
+  {this.state.on ?<Recipe  datafromapi={this.state.info}/>:<h4 style={{"textAlign":"center"}}>{this.state.detais}</h4>} 
  </div> 
       </React.Fragment>
    );
